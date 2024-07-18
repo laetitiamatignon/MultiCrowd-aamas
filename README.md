@@ -1,6 +1,8 @@
 # MultiSoc
 
-This repository contains the code for Multi-Soc, a deep-MARL model for decentralized multi-agent learning of navigation among humans. The idea behind Multi-Soc is to exploit the graph structure of a crowd (each human is a node) and the flexibility offer by GNNs. 
+This repository implements Multi-Soc, a deep-MARL model for decentralized multi-agent learning of navigation among humans. The implementation in this repositorory is used in the paper "Attention Graph for Multi-Robot Social Navigation with Deep Reinforcement Learning" [https://arxiv.org/abs/2401.17914](https://arxiv.org/abs/2401.17914). This repository is based on MAPPO [https://github.com/zoeyuchao/mappo](https://github.com/zoeyuchao/mappo).
+
+The idea behind Multi-Soc is to exploit the graph structure of a crowd (each human is a node) and the flexibility offer by GNNs. 
 
 ## Setup
 1. In a conda environment or virtual environment with Python 3.x, install the required python package
@@ -24,7 +26,7 @@ pip install -e .
 ### Parameters
 #### Simulation
 All the parameters of the simulation can be found in scripts/config/config_crowd.py. Main parameters are:
-* Number of humans, cameras
+* Number of humans
 * Positions of obstacles (represented as broken lines) 
 * Choice of the policy for entities trajectory ("social_force" or "orca" or both with randomize_policy=True )
 * Radius of entites (human.radius = 0.3 and robot.radius = 0.3 for social multi-agent test and human.radius = 0.4 and robot.radius = 0.4 for others model included there)
@@ -66,5 +68,24 @@ Evaluation using 1000 episodes: mean reward 17.67544
 and option --visualize_traj presents the simulation with rendering:
 ![simu_obs_cam](https://github.com/Air1Esc/MultiCrowd/assets/117373578/9a6018c8-9d8b-4913-83de-990f837b58e5)
 
+
+### Publication
+If you find this repository useful, please cite our paper:
+``` 
+@inproceedings{DBLP:conf/atal/EscudieMS24,
+  author       = {Erwan Escudie and
+                  La{\"{e}}titia Matignon and
+                  Jacques Saraydaryan},
+  title        = {Attention Graph for Multi-Robot Social Navigation with Deep Reinforcement
+                  Learning},
+  booktitle    = {Proceedings of the 23rd International Conference on Autonomous Agents
+                  and Multiagent Systems, {AAMAS} 2024, Auckland, New Zealand, May 6-10,
+                  2024},
+  pages        = {2252--2254},
+  publisher    = {International Foundation for Autonomous Agents and Multiagent Systems
+                  / {ACM}},
+  year         = {2024}
+}
+```
 
 
